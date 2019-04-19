@@ -15,7 +15,7 @@ const apiHost = environment.apiHost;
 })
 export class BarcodeFormatService {
 
-  private endpoint = apiHost + '/barcode/format/';
+  private endpoint = apiHost + 'barcode/formats/';
 
   constructor(private http: HttpClient) { }
 
@@ -32,7 +32,7 @@ export class BarcodeFormatService {
           if (response.error) {
             return response.error;
           }
-          // return the new note and the notify message
+          // return the new barcode format and the notify message
           return response.message;
         }));
   }
