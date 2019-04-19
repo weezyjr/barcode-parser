@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BarcodeFormat } from '../model/BarcodeFormat';
 import { BarcodeFormatService } from '../barcode-format-service/barcode-format.service';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-add-barcode-format',
@@ -11,7 +12,7 @@ export class AddBarcodeFormatComponent implements OnInit {
 
   public barcodeFormat: BarcodeFormat = new BarcodeFormat();
 
-  constructor(private barcodeFormatService: BarcodeFormatService) {
+  constructor(private barcodeFormatService: BarcodeFormatService, private notifierService: NotifierService) {
 
   }
 
@@ -20,6 +21,8 @@ export class AddBarcodeFormatComponent implements OnInit {
       console.log(this.barcodeFormat);
       await this.barcodeFormatService.createBarcodeFormat(this.barcodeFormat).subscribe((response) => {
         console.log(response);
+        this.notifierService.notify('success', response);
+
       });
     }
   }
