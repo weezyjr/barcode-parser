@@ -11,7 +11,7 @@ const Formats = db.define('Formats', {
 
 
     gtinStartIndex: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         validate: {
             min: {
@@ -27,7 +27,7 @@ const Formats = db.define('Formats', {
 
 
     gtinEndIndex: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         validate: {
             min: {
@@ -43,7 +43,7 @@ const Formats = db.define('Formats', {
 
     
     serialStartIndex: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         validate: {
             min: {
@@ -59,7 +59,7 @@ const Formats = db.define('Formats', {
 
 
     serialEndIndex: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         validate: {
             min: {
@@ -82,7 +82,7 @@ const Formats = db.define('Formats', {
 
 
     expiryDateStartIndex: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: true,
         validate: {
             min: {
@@ -98,7 +98,7 @@ const Formats = db.define('Formats', {
 
 
     expiryDateEndIndex: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: true,
         validate: {
             min: {
@@ -121,7 +121,7 @@ const Formats = db.define('Formats', {
 
 
     barcodeLength: {
-        type: Sequelize.NUMBER,
+        type: Sequelize.INTEGER,
         allowNull: false,
         validate: {
             min: {
