@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const barcodeCtrl = require('../controller').Barcode;
+const barcodeCtrl = require('../controller').BarcodeFormats;
 
 router.post('/', barcodeCtrl.create);
 

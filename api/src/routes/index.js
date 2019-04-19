@@ -1,5 +1,5 @@
 const router = require('express').Router();
 
-router.use('/barcode', require('./barcode.router'));
+router.use('/barcode/formats', require('./barcodeFormats.router'));
 
 module.exports = router;

@@ -1,5 +1,5 @@
-const Barcode = require('./barcode.ctrl');
+const BarcodeFormats = require('./barcodeFormats.ctrl');
 
 module.exports = {
-    Barcode,
+    BarcodeFormats,
 };
