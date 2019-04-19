@@ -38,6 +38,10 @@ app.use(cors())
 
 //**  Routes  **//
 
+// API routes
+app.use('/api/v1', require('./routes'));
+
+
 // helth check
 app.get('/', (req, res) => {
     res.status(200).json({
