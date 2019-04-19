@@ -31,9 +31,6 @@ export class ErrorInterceptor implements HttpInterceptor {
 
         // notify the user with the error
         this.notifierService.notify('error', error);
-
-        // log the user error
-        console.error('error', error);
       }
       return throwError(error);
     }));

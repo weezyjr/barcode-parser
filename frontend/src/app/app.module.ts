@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 
 import { NotifierModule } from 'angular-notifier';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AddBarcodeFormatComponent } from './add-barcode-format/add-barcode-format.component';
+import { ErrorInterceptor } from './helpers/error.interceptor';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,9 @@ import { AddBarcodeFormatComponent } from './add-barcode-format/add-barcode-form
       }
     })
   ],
-  providers: [],
+  providers: [
+    // to handle errors
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
