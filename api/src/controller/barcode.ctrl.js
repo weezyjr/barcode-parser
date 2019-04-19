@@ -1,5 +1,20 @@
 const Formats = require('../model').Formats;
 
+
+function validateFormatIndices(format) {
+
+    if (format.gtinStartIndex >= format.gtinEndIndex)
+        throw new Error('gtin start index must be smaller than gtin end index');
+
+    if (format.serialStartIndex >= format.serialEndIndex)
+        throw new Error('serial start index must be smaller than serial end index');
+
+    if (format.hasExpiryDate &&
+        format.expiryDateStartIndex >= format.expiryDateEndIndex)
+        throw new Error('expiry date start index must be smaller than expiry date end index');
+
+}
+
 // create new barcode format
 module.exports.create = async function (req, res, next) {
     try {
@@ -7,9 +22,11 @@ module.exports.create = async function (req, res, next) {
         if (!req || !req.body || !req.body.data)
             throw new Error('Bad request');
 
-
         // shorthand for req.body.data
         const reqBarcodeFormat = req.body.data;
+
+        // check if the start indices are smaller than the end indices
+        validateFormatIndices(reqBarcodeFormat);
 
         // TODO: Check if the barcode format already exist
 
@@ -43,6 +60,10 @@ module.exports.update = async function (req, res, next) {
 
         // shorthand for req.body.data
         const reqBarcodeFormat = req.body.data;
+
+
+        // check if the start indices are smaller than the end indices
+        validateFormatIndices(reqBarcodeFormat);
 
         // update the format with that specific id
         await Formats.update(reqBarcodeFormat, {
