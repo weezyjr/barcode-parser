@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+// Bootstrap
+//replace bootstrap variables
+$warning: orange;
+@import "~bootstrap/scss/bootstrap";
+
+// Nunito Font
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,600");
+
+* {
+  font-family: 'Nunito', sans-serif;
+}
