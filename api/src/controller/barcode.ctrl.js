@@ -1,9 +1,9 @@
 const Formats = require('../model').Formats;
 
-// create new note
+// create new barcode format
 module.exports.create = async function (req, res, next) {
     try {
-        // check if the request is valid and the JWT has decoded
+        // check if the request is valid
         if (!req || !req.body || !req.body.data)
             throw new Error('Bad request');
 
