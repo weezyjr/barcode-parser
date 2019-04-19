@@ -15,11 +15,11 @@ const Formats = db.define('Formats', {
         allowNull: false,
         validate: {
             min: {
-                args: 0,
+                args: [0],
                 msg: 'Miniumum GTIN start index is 0.'
             },
             max: {
-                args: 12,
+                args: [12],
                 msg: 'Maximum GTIN start index is 12.'
             }
         }
@@ -31,12 +31,12 @@ const Formats = db.define('Formats', {
         allowNull: false,
         validate: {
             min: {
-                args: 0,
-                msg: 'Miniumum GTIN start index is 0.'
+                args: [0],
+                msg: 'Miniumum GTIN end index is 0.'
             },
             max: {
-                args: 12,
-                msg: 'Maximum GTIN start index is 12.'
+                args: [12],
+                msg: 'Maximum GTIN end index is 12.'
             }
         }
     },
@@ -47,11 +47,11 @@ const Formats = db.define('Formats', {
         allowNull: false,
         validate: {
             min: {
-                args: 13,
+                args: [13],
                 msg: 'Miniumum serial start index is 13.'
             },
             max: {
-                args: 20,
+                args: [20],
                 msg: 'Maximum serial start index is 20.'
             }
         }
@@ -63,11 +63,11 @@ const Formats = db.define('Formats', {
         allowNull: false,
         validate: {
             min: {
-                args: 13,
+                args: [13],
                 msg: 'Miniumum serial end index is 13.'
             },
             max: {
-                args: 20,
+                args: [20],
                 msg: 'Maximum serial end index is 20.'
             }
         }
@@ -86,11 +86,11 @@ const Formats = db.define('Formats', {
         allowNull: true,
         validate: {
             min: {
-                args: 21,
+                args: [21],
                 msg: 'Miniumum expiry date start index is 21.'
             },
             max: {
-                args: 27,
+                args: [27],
                 msg: 'Maximum expiry date start index is 27.'
             }
         }
@@ -102,11 +102,11 @@ const Formats = db.define('Formats', {
         allowNull: true,
         validate: {
             min: {
-                args: 21,
+                args: [21],
                 msg: 'Miniumum expiry date end index is 21.'
             },
             max: {
-                args: 27,
+                args: [27],
                 msg: 'Maximum expiry date end index is 27.'
             }
         }
@@ -125,11 +125,11 @@ const Formats = db.define('Formats', {
         allowNull: false,
         validate: {
             min: {
-                args: 1,
+                args: [1],
                 msg: 'Miniumum barcode length is 1.'
             },
             max: {
-                args: 27,
+                args: [27],
                 msg: 'Maximum barcode length is 27.'
             }
         }
