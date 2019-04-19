@@ -4,8 +4,8 @@ export class BarcodeFormat {
   serialStartIndex: number;
   serialEndIndex: number;
   hasExpiryDate: boolean;
-  expiryDateStartIndex: number;
-  expiryDateEndIndex: number;
-  dateFormat: string;
+  expiryDateStartIndex?: number;
+  expiryDateEndIndex?: number;
+  dateFormat?: string;
   barcodeLength: number;
 }
