@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const parseBarcodeCtrl = require('../controller').parseBarcode;
 
-router.post('/', parseBarcodeCtrl.parse);
+router.get('/:barcode', parseBarcodeCtrl.parse);
 
 module.exports = router;

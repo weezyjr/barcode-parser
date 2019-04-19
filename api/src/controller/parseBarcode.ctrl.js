@@ -2,8 +2,9 @@
 module.exports.parse = async function (req, res, next) {
     try {
         // check if the request is valid
-        if (!req || !req.body || !req.body.data)
+        if (!req || !req.params || !req.params.barcode)
             throw new Error('Bad request');
+
 
     } catch (error) {
         next(error);
