@@ -13,64 +13,25 @@ const Formats = db.define('Formats', {
     gtinStartIndex: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        validate: {
-            min: {
-                args: [0],
-                msg: 'Miniumum GTIN start index is 0.'
-            },
-            max: {
-                args: [12],
-                msg: 'Maximum GTIN start index is 12.'
-            }
-        }
     },
 
 
     gtinEndIndex: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        validate: {
-            min: {
-                args: [0],
-                msg: 'Miniumum GTIN end index is 0.'
-            },
-            max: {
-                args: [12],
-                msg: 'Maximum GTIN end index is 12.'
-            }
-        }
     },
 
     
     serialStartIndex: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        validate: {
-            min: {
-                args: [13],
-                msg: 'Miniumum serial start index is 13.'
-            },
-            max: {
-                args: [20],
-                msg: 'Maximum serial start index is 20.'
-            }
-        }
+
     },
 
 
     serialEndIndex: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        validate: {
-            min: {
-                args: [13],
-                msg: 'Miniumum serial end index is 13.'
-            },
-            max: {
-                args: [20],
-                msg: 'Maximum serial end index is 20.'
-            }
-        }
     },
 
 
@@ -84,32 +45,12 @@ const Formats = db.define('Formats', {
     expiryDateStartIndex: {
         type: Sequelize.INTEGER,
         allowNull: true,
-        validate: {
-            min: {
-                args: [21],
-                msg: 'Miniumum expiry date start index is 21.'
-            },
-            max: {
-                args: [27],
-                msg: 'Maximum expiry date start index is 27.'
-            }
-        }
     },
 
 
     expiryDateEndIndex: {
         type: Sequelize.INTEGER,
         allowNull: true,
-        validate: {
-            min: {
-                args: [21],
-                msg: 'Miniumum expiry date end index is 21.'
-            },
-            max: {
-                args: [27],
-                msg: 'Maximum expiry date end index is 27.'
-            }
-        }
     },
 
 
@@ -123,16 +64,6 @@ const Formats = db.define('Formats', {
     barcodeLength: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        validate: {
-            min: {
-                args: [1],
-                msg: 'Miniumum barcode length is 1.'
-            },
-            max: {
-                args: [27],
-                msg: 'Maximum barcode length is 27.'
-            }
-        }
     },
 
 
