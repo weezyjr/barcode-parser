@@ -13,6 +13,12 @@ function validateFormatIndices(format) {
         format.expiryDateStartIndex >= format.expiryDateEndIndex)
         throw new Error('expiry date start index must be smaller than expiry date end index');
 
+    if (format.hasExpiryDate && format.barcodeLength < format.expiryDateEndIndex)
+        throw new Error('barcode length must be bigger than or equal to the expiry date end index');
+
+
+    if (!format.hasExpiryDate && format.barcodeLength < format.serialEndIndex)
+        throw new Error('barcode length must be bigger than or equal to the serial end index');
 }
 
 // create new barcode format
