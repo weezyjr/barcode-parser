@@ -7,10 +7,12 @@ import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { AddBarcodeFormatComponent } from './add-barcode-format/add-barcode-format.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AddBarcodeFormatComponent
   ],
   imports: [
     HttpClientModule,

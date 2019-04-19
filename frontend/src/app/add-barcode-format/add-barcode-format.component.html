@@ -1,0 +1,77 @@
+<div class="container">
+  <form (ngSubmit)="addBarcodeFormat(barcodeFormatForm?.valid)" #barcodeFormatForm="ngForm">
+
+    <div class="gtin">
+      <h3 class="text-center">
+        GTIN
+      </h3>
+      <div class="form-group">
+        <label for="gtinStartIndex">GTIN start index [0-12] </label>
+        <input name="gtinStartIndex" [(ngModel)]="barcodeFormat.gtinStartIndex" type="number" class="form-control"
+          required placeholder="Enter GTIN starting index" #gtinStartIndex="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="gtinEndIndex">GTIN end index [0-12] </label>
+        <input name="gtinEndIndex" [(ngModel)]="barcodeFormat.gtinEndIndex" type="number" class="form-control" required
+          placeholder="Enter GTIN starting index" #gtinEndIndex="ngModel">
+      </div>
+    </div>
+
+
+    <div class="serial my-3">
+      <h3 class="text-center">
+        Serial
+      </h3>
+      <div class="form-group">
+        <label for="serialStartIndex">Serial start index [13-20] </label>
+        <input name="serialStartIndex" [(ngModel)]="barcodeFormat.serialStartIndex" type="number" class="form-control"
+          required placeholder="Enter serial starting index" #serialStartIndex="ngModel">
+      </div>
+
+      <div class="form-group">
+        <label for="serialStartIndex">Serial end index [13-20] </label>
+        <input name="serialStartIndex" [(ngModel)]="barcodeFormat.serialEndIndex" type="number" class="form-control"
+          required placeholder="Enter serial starting index" #serialStartIndex="ngModel">
+      </div>
+    </div>
+
+    <div class="hasExpiryDate my-3">
+      <h3 class="text-center">
+        Has Expiry Date ?
+      </h3>
+      <input name="hasExpiryDate" [(ngModel)]="barcodeFormat.hasExpiryDate" type="checkbox" class="form-control"
+        #hasExpiryDate="ngModel">
+
+      <div *ngIf="barcodeFormat?.hasExpiryDate">
+        <div class="form-group">
+          <label for="expiryDateStartIndex">Expiry Date start index [21-27] </label>
+          <input name="expiryDateStartIndex" [(ngModel)]="barcodeFormat.expiryDateStartIndex" type="number"
+            class="form-control" required placeholder="Enter expiry date starting index"
+            #expiryDateStartIndex="ngModel">
+        </div>
+
+        <div class="form-group">
+          <label for="expiryDateEndIndex">Serial end index [21-27] </label>
+          <input name="expiryDateEndIndex" [(ngModel)]="barcodeFormat.expiryDateEndIndex" type="number"
+            class="form-control" required placeholder="Enter expiry date starting index" #expiryDateEndIndex="ngModel">
+        </div>
+      </div>
+    </div>
+
+    <div class="barcodelength my-3">
+      <div class="form-group">
+        <h3 class="text-center">
+          Barcode length
+        </h3>
+        <input name="barcodeLength" [(ngModel)]="barcodeFormat.barcodeLength" type="number" class="form-control"
+          required placeholder="Enter barcode length" #barcodeLength="ngModel">
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary btn-lg"> SUBMIT</button>
+
+  </form>
+</div>
+
+<router-outlet></router-outlet>
