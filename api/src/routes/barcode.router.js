@@ -1,10 +1,6 @@
-let router = require('express').Router();
+const router = require('express').Router();
+const barcodeCtrl = require('../controller').Barcode;
 
-router.get('/', (req, res)=> {
-    res.status(200).json({
-        status: 'success',
-        message: 'barcode routes are working fine'
-    })
-});
+router.post('/', barcodeCtrl.create);
 
 module.exports = router;
