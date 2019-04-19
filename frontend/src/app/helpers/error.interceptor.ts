@@ -2,11 +2,12 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { NotifierService } from 'angular-notifier';
 
 
 @Injectable()
 export class ErrorInterceptor implements HttpInterceptor {
-  constructor() { }
+  constructor(private notifierService: NotifierService) { }
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(catchError(serverError => {
@@ -27,6 +28,9 @@ export class ErrorInterceptor implements HttpInterceptor {
         if (error.startsWith('Unknown Error')) {
           error = 'Failed to connect to the server, please check your internet connection';
         }
+
+        // notify the user with the error
+        this.notifierService.notify('error', error);
 
         // log the user error
         console.error('error', error);
