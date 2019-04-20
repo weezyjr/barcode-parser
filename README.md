@@ -2,6 +2,16 @@
 
 Barcode is an app used to create, edit and delete barcode formats and parse the barcodes using these formats.
 
+## How it works
+
+the user creates a barcode format formed of the barcode's GTIN start/end index, Serial start/end index, and expiry date indicies if it exist
+
+the parse function, parses the GTIN, Serial and expiry date out of any barcode based on the created formats
+
+### Format Layout
+
+![barcode](https://i.imgur.com/UU9K2AN.png)
+
 ## Backend
 
 a stack of express as a framework for Node.js, sequalize as promise-based ORM for the database
