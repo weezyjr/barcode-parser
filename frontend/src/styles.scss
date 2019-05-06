@@ -1,6 +1,7 @@
 // Bootstrap
 //replace bootstrap variables
 $warning: orange;
+$primary: #ea6d64;
 @import "~bootstrap/scss/bootstrap";
 
 // Nunito Font
@@ -8,6 +9,10 @@ $warning: orange;
 
 * {
   font-family: 'Nunito', sans-serif;
+}
+
+body{
+  background: #dfefcd;
 }
 
 
